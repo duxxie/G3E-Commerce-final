@@ -1,3 +1,5 @@
+using Domain.Enums;
+
 namespace Domain.Entities
 {
     public class Produto
@@ -7,6 +9,6 @@ namespace Domain.Entities
         public string Descricao { get; private set; } = string.Empty;
         public decimal Preco { get; private set; }
         public int Estoque { get; private set; }
-        public string Categoria { get; private set; } = string.Empty;
+        public ECategoria Categoria { get; private set; }
     }  
 }

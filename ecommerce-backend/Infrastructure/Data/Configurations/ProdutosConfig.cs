@@ -12,11 +12,15 @@ namespace Infrastructure.Data.Configurations
 
             builder.HasKey(p => p.Id);
 
-            builder.Property(p => p.Nome);
+            builder.Property(p => p.Nome)
+                            .HasMaxLength(150)
+                            .IsRequired();
             
-            builder.Property(p => p.Descricao);
+            builder.Property(p => p.Descricao)
+                            .HasMaxLength(500);
             
-            builder.Property(p => p.Preco);
+            builder.Property(p => p.Preco)
+                            .IsRequired();
 
             builder.Property(p => p.Estoque);
 
@@ -24,8 +28,6 @@ namespace Infrastructure.Data.Configurations
                             .HasConversion<string>()
                             .IsRequired();
 
-
-            throw new NotImplementedException();
         }
     }
 }

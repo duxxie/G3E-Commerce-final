@@ -9,13 +9,12 @@ namespace Domain.Entities
 
         public int ProdutoId { get; private set; }
 
-        // Snapshot do produto
+        // Snapshot
         public string NomeProduto { get; private set; } = string.Empty;
         public decimal PrecoUnitario { get; private set; }
 
         public int Quantidade { get; private set; }
 
-        // EF Core
         protected ItemPedido() { }
 
         public ItemPedido(
@@ -24,6 +23,12 @@ namespace Domain.Entities
             decimal precoUnitario,
             int quantidade)
         {
+            if (string.IsNullOrWhiteSpace(nomeProduto))
+                throw new ArgumentException("Nome do produto é obrigatório.");
+
+            if (precoUnitario <= 0)
+                throw new ArgumentException("Preço unitário deve ser maior que zero.");
+
             if (quantidade <= 0)
                 throw new ArgumentException("Quantidade deve ser maior que zero.");
 
@@ -35,5 +40,13 @@ namespace Domain.Entities
 
         public decimal CalcularTotal()
             => Quantidade * PrecoUnitario;
+
+        internal void AumentarQuantidade(int quantidade)
+        {
+            if (quantidade <= 0)
+                throw new ArgumentException("Quantidade adicional deve ser maior que zero.");
+
+            Quantidade += quantidade;
+        }
     }
 }

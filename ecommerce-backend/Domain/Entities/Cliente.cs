@@ -13,7 +13,6 @@ namespace Domain.Entities
         private readonly List<ItemCarrinho> _itensCarrinho = new();
         public IReadOnlyCollection<ItemCarrinho> ItensCarrinho => _itensCarrinho;
 
-        // EF Core
         protected Cliente() { }
 
         public Cliente(

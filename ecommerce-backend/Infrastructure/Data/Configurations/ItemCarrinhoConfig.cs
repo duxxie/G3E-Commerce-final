@@ -29,11 +29,6 @@ namespace Infrastructure.Data.Configurations
 
             builder.Property(ic => ic.ProdutoId)
                 .IsRequired();
-
-            builder.HasOne(ic => ic.Produto)
-                .WithMany()
-                .HasForeignKey(ic => ic.ProdutoId)
-                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

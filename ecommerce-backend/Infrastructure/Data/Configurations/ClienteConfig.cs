@@ -13,25 +13,25 @@ namespace Infrastructure.Data.Configurations
             builder.HasKey(c => c.Id);
 
             builder.Property(c => c.Nome)
-                            .HasMaxLength(150)
-                            .IsRequired();
+                .HasMaxLength(150)
+                .IsRequired();
 
             builder.Property(c => c.Email)
-                            .HasMaxLength(150)
-                            .IsRequired();
+                .HasMaxLength(150)
+                .IsRequired();
 
             builder.HasIndex(c => c.Email)
-                            .IsUnique();
+                .IsUnique();
 
             builder.Property(c => c.Endereco)
-                            .IsRequired();
+                .IsRequired();
 
             builder.Property(c => c.SenhaHash)
-                            .IsRequired();
+                .IsRequired();
 
             builder.HasMany(c => c.ItensCarrinho)
-                            .WithOne()
-                            .HasForeignKey(i => i.ClienteId);
+                .WithOne()
+                .HasForeignKey(i => i.ClienteId);
         }
     }
 }

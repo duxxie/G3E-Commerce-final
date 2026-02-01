@@ -13,20 +13,20 @@ namespace Infrastructure.Data.Configurations
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Nome)
-                            .HasMaxLength(150)
-                            .IsRequired();
+                .HasMaxLength(150)
+                .IsRequired();
             
             builder.Property(p => p.Descricao)
-                            .HasMaxLength(500);
+                .HasMaxLength(500);
             
             builder.Property(p => p.Preco)
-                            .IsRequired();
+                .IsRequired();
 
             builder.Property(p => p.Estoque);
 
             builder.Property(p => p.Categoria)
-                            .HasConversion<string>()
-                            .IsRequired();
+                .HasConversion<string>()
+                .IsRequired();
 
         }
     }

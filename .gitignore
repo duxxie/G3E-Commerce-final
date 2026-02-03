@@ -484,7 +484,7 @@ $RECYCLE.BIN/
 *.swp
 
 # Bruh
-*.appsettings.Development.json
-*.appsettings.Local.json
-*.appsettings.json
-*.env
+appsettings.Development.json
+appsettings.Local.json
+appsettings.json
+.env

@@ -6,9 +6,9 @@ services:
     container_name: ecommerce-postgres
     restart: always
     environment:
-      POSTGRES_DB: ecommerce_db
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: tent30utrav3sz
     ports:
       - "5433:5432"
     volumes:

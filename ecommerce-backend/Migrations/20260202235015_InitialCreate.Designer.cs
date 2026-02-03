@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Teste.Migrations
 {
     [DbContext(typeof(EcommerceDbContext))]
-    [Migration("20260131203408_Initial-Migration")]
-    partial class InitialMigration
+    [Migration("20260202235015_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

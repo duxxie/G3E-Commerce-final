@@ -1,5 +1,7 @@
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Infrastructure.Data.Seeds;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<EcommerceDbContext>();
+    ProdutoSeed.Seed(context);
 }
 
 app.UseHttpsRedirection();
